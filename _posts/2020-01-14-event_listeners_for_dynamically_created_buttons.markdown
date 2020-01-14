@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "Event Listeners for Dynamically Created Buttons"
-date:       2020-01-14 18:27:05 +0000
+date:       2020-01-14 13:27:06 -0500
 permalink:  event_listeners_for_dynamically_created_buttons
 ---
 
@@ -34,10 +34,14 @@ initBindingsAndEventListeners() {
 Lets break that down.
 
 This sets a standard event listener on a button that already exists on the page:
-```this.expenses.setEditButtonListener();```
+```
+this.expenses.setEditButtonListener();
+```
 
 A variable is declared to reference the page. This is necessary because in the callbacks for the event listeners being set on the dynamically created buttons are functions of the page manager, or the data manager. Within the next block of code, which itself is an event listener, 'this' would refer the the element that *that* listener is being set to, not the page manager as I need it to.
-```const weddingPage = this.parent.router.routes.wedding```
+```
+const weddingPage = this.parent.router.routes.wedding
+```
 
 This is the tricky bit. An event listener is set to the entire container, for any click. (This could also just be called on the window if you are not using containers - but I wanted to only set it to a specific section of the page.) When a click is detected anywhere within the container, it will see what the target was, and check whether the target had the specific id of a dynamically created button. If so, it would fire the callback function that should handle that button.
 ```

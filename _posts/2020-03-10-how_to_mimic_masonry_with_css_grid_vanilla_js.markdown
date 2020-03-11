@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "How to Mimic Masonry with CSS Grid + Vanilla JS"
-date:       2020-03-10 18:19:50 +0000
+date:       2020-03-10 14:19:51 -0400
 permalink:  how_to_mimic_masonry_with_css_grid_vanilla_js
 ---
 
@@ -29,7 +29,7 @@ But once you have your data, it's basically as simple as calculating the height 
 With no dynamic styling, because they're in a grid, all of the boxes appear to all be the same height. But all of the 'boxContent' divs have only the height neccessary to accommodate their content. 
 
 
-![](https://ibb.co/CKYVzZ4) ![](https://ibb.co/yqPJGqZ)
+![](https://imgur.com/UmCuMpT) ![](https://imgur.com/cI0yDeH)
 
 
 Now the task is to dynamically resize them. To do this in one fell swoop, you want to grab all of your box objects and iterate over them, calculating the size of their content, and then assigning them the correct number of rows to span.
@@ -81,7 +81,7 @@ That "20" is actually where your row height is getting set. And it isn't really 
 
 And now, for those of you who didn't go mess around with the JS Fiddle, the final reveal:
 
-![](https://ibb.co/qRBsJgY)
+![](https://imgur.com/ZflvL1C)
 
 And that's it! Next time I'll be writing about a slightly more complex implementation, with a React example and dynamically loaded content.
 

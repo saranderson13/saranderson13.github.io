@@ -1,11 +1,11 @@
 # Site settings
 author: Sarah Anderson
-title: Untitled
+title: 404-blog-not-found
 header-img: img/home-bg.png
 email: saranderson13@gmail.com
 copyright_name: Sarah Anderson
 description: > # this means to ignore newlines until "baseurl:"
-  Soon to be known as the blog formerly known as Untitled.
+  An equally nondescript name for the blog formerly known as Untitled.
 baseurl: "" # the subpath of your site, e.g. /blog
 twitter_username: 
 github_username:  saranderson13

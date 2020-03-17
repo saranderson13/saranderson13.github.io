@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "Mock Masonry with React & Dynamic Data"
-date:       2020-03-17 04:15:19 +0000
+date:       2020-03-17 00:15:20 -0400
 permalink:  mock_masonry_with_react_and_dynamic_data
 ---
 
@@ -19,7 +19,7 @@ Before moving on, here is a brief overview of the section of my application I'll
 
 ![](https://i.ibb.co/C6vkcCX/Aesthetic-Lists.png)
 
-Breaking down the component structure, I have a **ListsBodyContainer** which holds all of the **ListBox**es. Each **ListBox** contains a List Title (just a div, not component), and many **ListItemLine**s. Here is an example of what the HTML would look like, compiled, not from the various components in JSX
+Breaking down the component structure, I have a **ListsBodyContainer** which holds all of the **ListBox**es. Each **ListBox** contains a List Title (just a div, not component), and many **ListItemLine**s. Here is an example of what the HTML would look like, compiled, not from the various components.
 
 ```
 // THE SECTION IS EQUIVALENT TO THE ListsBodyContainer COMPONENT
@@ -85,9 +85,9 @@ And similar to the CSS from the static example, not much is needed:
 .listItem { font-size: 12px; }
 ```
 
-**Note Above:** In the #bodyContainer, you see "display: block". Then in the #bodyContainer.grid, you see "display: grid". In my application, the #bodyContainer id was used on multiple pages, for different body components, all of which except for the Lists page needed it to be block display. The #bodyContainer.grid is a more specific selector, so it overrides the regular #bodyContainer styling.
+**Note Above:** In the #bodyContainer, you see "display: block". Then in the #bodyContainer.grid, you see "display: grid". In my application, the #bodyContainer id was used on multiple pages, for different types of body components. For every page except the Lists page, the display needs to be block. The #bodyContainer.grid is a more specific selector, so it overrides the regular #bodyContainer styling.
 
-Okay, now that all that is established and you have a better idea of the content I'm working with, lets jump into the React Lifecycle methods that make the mock masonry possible in my dynamic application. Below is all of the applicable code, and then I'll go through it in more detail. This is all in the ListsBodyContainer component. No additional code is needed in the nested components.
+Okay, now that all that is established and you have a better idea of the content I'm working with, lets jump into the React Lifecycle methods that make the mock masonry possible in my dynamic application. Below is all of the applicable code, and then I'll go through it in more detail. This is all in the ListsBodyContainer component. No additional code is needed in the child components.
 
 ```
 componentDidMount() {
@@ -116,7 +116,7 @@ componentWillUnmount() {
 }
 ```
 
-Lets start with the functions that do the actual resizing: #resizeListBox, and **#resizeAllListBoxes**. Intuitively, **#resizeAllListBoxes** collects all of the ListBox elements, and iterates over them, calling the **#resizeListBox** function for each. This function is identical to the function that resizes the boxes from my last tutorial, with one exception. There are multiple elements inside of a ListBox, so the height of both must be accounted for. In my case there are a static number of elements: the list title, and the actual list, so I opted to explicitly reference each element, as in box.children[0], and box.children[1]. If you had many elements, or an inconsistent number of elements, you would want to set up a loop of some kind to calculate the contentHeight. The 40 also being added in there is to account for padding. The end result is that a gridRowEnd style attribute is added to each ListBox component. I go into greater detail on how this function works in the static tutorial so I'm not going to go any deeper into it here.
+Lets start with the functions that do the actual resizing: **#resizeListBox**, and **#resizeAllListBoxes**. Intuitively, **#resizeAllListBoxes** collects all of the ListBox elements, and iterates over them, calling the **#resizeListBox** function for each. This function is identical to the function that resizes the boxes from my last tutorial, with one exception. There are multiple elements inside of a ListBox, so the height of both must be accounted for. In my case there are a static number of elements: the list title, and the actual list, so I opted to explicitly reference each element, as in box.children[0], and box.children[1]. If you had many elements, or an inconsistent number of elements, you would want to set up a loop of some kind to calculate the contentHeight. The 40 also being added in there is to account for padding. The end result is that a gridRowEnd style attribute is added to each ListBox component. I go into greater detail on how this function works in the static tutorial so I'm not going to go any deeper into it here.
 
 Now on to the three lifecycle methods being utilized, because this is really where it all comes together. Remember now that all of these lifecycle methods are inside the ListsBodyContainer, which holds all of the lists. As soon as that component is mounted, (and **#componentDidMount()** is called...), I want to set an event listener to take care of re-styling when the window is resized. (This takes care of key thing #2 above.) I do NOT at this point want to do any actual sizing because at this point, my data is being fetched, and is not available. Technically I could call the **#resizeAllListBoxes** method here and it wouldn't break anything. The first line of that method just collects all the ListBoxes, so if it found none it would have nothing to iterate over. But there is no point in attempting to call it at this time because the data is never going to be there.
 

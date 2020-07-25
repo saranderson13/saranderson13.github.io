@@ -95,7 +95,7 @@ return false if num <= 1 || (num != 2 && num.even())
 (2..num-1).to_a().each { |i| return false if num % i == 0 }
 ```
 
-**Improving Runtime** Dividing any number by more than the number that would result in the solution equalling two, would result in a number with decimals between 1 and 2, so taking the modulus with an *i* that is higher than your number divided by 2 will never result in a remainder of 0. So there is really no need to test any numbers above your number divided by 2. In the case of a small number, this won't do much. But if you have a really big number, it could genuinely help.
+**Improving Runtime** Dividing any number by more than the number that would result in the solution equalling two, would result in a number with decimals between 1 and 2, so taking the modulus with an *i* that is higher than your number divided by 2 will never result in a remainder of 0. So there is really no need to test any numbers above your number divided by 2. In the case of a small number, this won't do much. But if you have a really big number, it could genuinely help. You are literally cutting out half of the numbers that the loop would have run through.
 
 ```
 (2..num/2).to_a().each { |i| return false if num % i == 0

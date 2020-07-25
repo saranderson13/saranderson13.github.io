@@ -1,12 +1,12 @@
 ---
 layout: post
 title:      "Problem Solving for Simple Problems"
-date:       2020-07-25 15:51:38 +0000
+date:       2020-07-25 11:51:39 -0400
 permalink:  problem_solving_for_simple_problems
 ---
 
 
-Today I'm going to walk through a simple problem. One that many programmers and developers have already hashed through by themselves.The point of this excersize is not to show the solution to the problem, but the process of getting there in an effective and efficient way. This could be in a technical interview, or just working through a problem on Code Wars or Hacker Rank, but more broadly, literally any time you're coding and have a problem that you haven't approached before. To demonstrate my approach to solving simple problems, I'm going to create a method to determine primality. I'm writing in Ruby, because I ♥ Ruby, but as I said this is about the process.
+Today I'm going to walk through a simple problem. One that many programmers and developers have already hashed through by themselves. The point of this exercise is not to show the solution to the problem, but the process of getting there in an effective and efficient way. This could be in a technical interview, or just working through a problem on Code Wars or Hacker Rank, but more broadly, literally any time you're coding and have a problem that you haven't approached before. To demonstrate my approach to solving simple problems, I'm going to create a method to determine primality. I'm writing in Ruby, because I ♥ Ruby, but as I said this is about the process.
 
 DISCLAIMER: I am not a math genius. I'm definitely more of a designer and developer. I know the basics of what makes a prime number. I'm going to optimize to the point that I can, but most likely this would not be a great solution to determining primality for very large numbers. I am aware that there are more effective ways to cut down the number of numbers you need to test, especially once you get up into those numbers that are represented with carrot notation, but I don't know what those methods might be or how to implement them off the top of my head. I'd like to think I could if I did some research. (Also, I'm not positive that 'carrot notation' is the proper name for that notiation.) I am VERY welcoming of improved methodology in the comments. This is just the way that I approached the problem with my current knowledge, not looking anything up, except for some higher-ish prime numbers for testing purposes, because in a technical interview situation that is what I'd have and that's what I'm practicing for right now. I am also VERY welcoming of feedback from anyone that has experience with evaluating candidates in technical interviews. ☺
 

@@ -12,7 +12,7 @@ DISCLAIMER: I am not a math genius. I'm definitely more of a designer and develo
 
 Okay. Onto the problem at hand. I try to stick to a few basic steps when solving a problem for the first time:
 
-1. Write out what the end goal is. What should your method would accomplish and return? 
+1. Write out what the end goal is. What should your method accomplish and return? 
 2. Pseudocode. 
 3. Arguably the most important step. Solve the problem in the way that is easiest for you *knowing* that there will be ways to optimize. 
 4. Once you have a working method, start optimizing, troubleshooting and safeguarding. 
@@ -21,7 +21,7 @@ Okay. Onto the problem at hand. I try to stick to a few basic steps when solving
 Throughout all of this you should be keeping an eye out for edge cases or flaws in your logic. Now we can move through those steps with the actual example.
 
 
-#### Step One: The Goal
+### Step One: The Goal
 This step may seem unnecessary with such a simple problem, but writing it out helps me stay focused. It is absolutely crucial with a more complex problem that has a few stipulations and should accomplish a few things.
 
 ```
@@ -29,7 +29,7 @@ This step may seem unnecessary with such a simple problem, but writing it out he
 ```
 
 
-#### Step Two: The Scaffold
+### Step Two: The Scaffold
 I like to write in some real code here too, for instance, I usually just go ahead and create the frame of the function, but then inside there I comment about the steps that I think I should take.
 
 ```
@@ -45,8 +45,8 @@ end
 ```
 
 
-#### Step Three: Get a Working Method
-Just get something that works. If you're in a technical interview scenario, it's good to verbally communicate that you know there will be ways to optimize, but that you first want to just be able to generate a working method.Try to make a note of those places that you think could be optimized, but where actual optimization requires a bit more pondering. It is good to do this verbally too. In places where it is easy to optimize, just do it. Definitely don't just write out a long solution so you can optimize later. That will slow you down and make you look like you can't write succinctly when there are obvious ways to do it. Don't write out a three layer if/else statement when you can just test all three of your conditionals in the first if. But if you have an if statement and you aren't sure yet whether you'll need more than one action based on the conditional, I suggest going long hand. It gives you more wiggle room. You might even find that what you initially write out in a few steps can in fact be reduced to something that could be put in a ternary.
+### Step Three: Get a Working Method
+Just get something that works. If you're in a technical interview scenario, it's good to verbally communicate that you know there will be ways to optimize, but that you first want to just be able to generate a working method. Try to make a note of those places that you think could be optimized, but where actual optimization requires a bit more pondering. It's good to do this verbally too. In places where it is easy to optimize, just do it. Definitely don't just write out a long solution so you can optimize later. That will slow you down and make you look like you can't write succinctly when there are obvious ways to do it. Don't write out a three layer if/else statement when you can just test all three of your conditionals in the first if. But if you have an if statement and you aren't sure yet whether you'll need more than one action based on the conditional, I suggest going long hand. It gives you more wiggle room. You might even find that what you initially write out in a few steps can in fact be reduced to something that could be put in a ternary.
 
 ```
 def prime? num
@@ -73,19 +73,19 @@ end
 ```
 
 
-#### Step Four: Optimization, Troublshooting, and Code Integrity
+### Step Four: Optimization, Troublshooting, and Code Integrity
 Start with the places that you noted before. They will likely lead you to more places that can be simplified, reduced, combined or made more efficient from a runtime perspective. True optimization is working on that runtime perspective. 
 
 Now, there are a few problems with the above code. To be specific: 
 - There is some flawed logic
-- There are some places where the code can be written more succinctly
+- There is a place where the code can be written more succinctly
 - There is a place where you can cut down the runtime. 
 - And there is also a place where you should defend against the user being a shenaniganizer and causing your code to break.
 
-**Flawed Logic:** In my initial 'obvious' tests, I checked for whether the number was even. I did this so that if it was, I wouldn't have to go through the iterization, which would slow down the runtime in a completely unnecessary and unavoidable way. However, there is actually *one* even number that *is* prime: 2. So I should add that into my check.
+**Flawed Logic:** In my initial 'obvious' tests, I checked for whether the number was even. I did this so that if it was, I wouldn't have to go through the iterization, which would slow down the runtime in a completely unnecessary and avoidable way. However, there is actually *one* even number that *is* prime: 2. So I should add that into my check.
 
 ```
-return false if num <=1 || (num != 2 && num.even())
+return false if num <= 1 || (num != 2 && num.even())
 ```
 
 

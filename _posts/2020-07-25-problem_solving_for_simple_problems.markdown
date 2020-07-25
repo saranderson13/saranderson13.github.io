@@ -95,13 +95,13 @@ return false if num <= 1 || (num != 2 && num.even())
 (2..num-1).to_a().each { |i| return false if num % i == 0 }
 ```
 
-**Improving Runtime** In my list of things that could not be prime numbers, I also left out one category. Floats cannot be prime. Dividing any number by more than the number that would result in the solution equalling two, would result in a decimal. So there is really no need to test any numbers above your number divided by 2. In the case of a small number, this won't do much. But if you have a really big number, it could genuinely help.
+**Improving Runtime** Dividing any number by more than the number that would result in the solution equalling two, would result in a number with decimals between 1 and 2, so taking the modulus with an *i* that is higher than your number divided by 2 will never result in a remainder of 0. So there is really no need to test any numbers above your number divided by 2. In the case of a small number, this won't do much. But if you have a really big number, it could genuinely help.
 
 ```
 (2..num/2).to_a().each { |i| return false if num % i == 0
 ```
 
-Note that it is safe to just say num/2 because (at least) with Ruby, an Integer divided by an Integer will always return an Integer. So 4 / 2 = 2. But 5 / 2 will also = 2. The point being, you will never get 2.5. And actually, even if you did end up with the issue of getting a Float there, by using a Range and turning it into an Array, you safeguard against that too.
+Note that it is safe to just say num/2 because (at least) with Ruby, an Integer divided by an Integer will always return an Integer. So 4 / 2 = 2. But 5 / 2 will also = 2. The point being, you will never get 2.5. And actually, even if you did end up with the issue of getting a Float there, by using a Range and turning it into an Array, you safeguard against that too. You also don't need to worry about testing with 3, because that is higher than the true half of 5.
 
 ```
 (1..5.5).to_a()

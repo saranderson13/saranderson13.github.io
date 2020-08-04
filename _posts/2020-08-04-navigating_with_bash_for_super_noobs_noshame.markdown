@@ -12,7 +12,7 @@ Moving on with a little backstory. When I first started working heavily in the t
 **The good news and the reason for my life story**: Everything worked pretty much the same because Mac OS Terminal and WSL using an Ubuntu terminal both respond to Bash. I am NOT going to get into anything under the surface of that. It's a lot to unpack and there are people who are far more qualified to explain what's going on with the differences between Unix (Mac OS) and Linux (WSL), and their respective shells. But they are similar enough for at least basic commands to work to the same effect, and this may help no matter which one you are using, or if you're using anything else where Bash commands work. 
 
 ## Navigating in a dark and unfamiliar house.
-### (AKA a guide to seeing what is in your directories, and then getting there.)
+#### (AKA a guide to seeing what is in your directories, and then getting there.)
 - - -
 **First up, 'ls':**
 ```

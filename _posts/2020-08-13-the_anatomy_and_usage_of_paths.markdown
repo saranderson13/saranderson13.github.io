@@ -1,14 +1,14 @@
 ---
 layout: post
 title:      "The Anatomy and Usage of Paths "
-date:       2020-08-13 05:27:53 +0000
+date:       2020-08-13 01:27:54 -0400
 permalink:  the_anatomy_and_usage_of_paths
 ---
 
 
 Last week on the not-found blog I covered the [very very basics of moving around the terminal, with 'ls' and 'cd'](http://https://saranderson13.github.io/navigating_with_bash_for_super_noobs_noshame). I had intended to move on to things like making and modifying files and directories, but I want to make a quick detour to go a bit more into paths. Once again, this will be a 1 ★ complexity rating. These are the very basics. But understanding paths will help immensely with navigating and manipulating files from the terminal.
 
-Paths are strings that indicate the unique location at which a file is stored. There are a lot of different syntaxes for paths, depending on which operating system and/or shell you're working with. When I say different syntaxes, I mean some will use a '/' to delineate directory separation, and some will use a '\'. Or some will use brackets, or colons or etc. [This wiki page shows all of the different ways that paths are written on different operating systems.](https://en.wikipedia.org/wiki/Path_(computing)#Representations_of_paths_by_operating_system_and_shell) My examples will be written in bash, which is a Unix shell, and what I'm most familiar with personally.
+Paths are strings that indicate the unique location at which a file is stored. There are a lot of different syntaxes for paths, depending on which operating system and/or shell you're working with. When I say different syntaxes, I mean some will use a `/` to delineate directory separation, and some will use a `\`. Or some will use brackets, or colons or etc. [This wiki page shows all of the different ways that paths are written on different operating systems.](https://en.wikipedia.org/wiki/Path_(computing)#Representations_of_paths_by_operating_system_and_shell) My examples will be written in bash, which is a Unix shell, and what I'm most familiar with personally.
 
 **I'm going to use this example tree for all of the examples: **
 ```

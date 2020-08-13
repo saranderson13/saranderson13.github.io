@@ -29,7 +29,7 @@ home
 |
 ```
 
-** Note that `.file` is not really a file type. A file may be automatically assingned `.file` if the actual type is unknown. I'm just using it in the example so that you know which items in the trees are files, and which are directories. [For a more in depth explanation of .file, check this out.](https://file.org/extension/file))/
+** Note that `.file` is not really a file type. A file may be automatically assingned `.file` if the actual type is unknown. I'm just using it in the example so that you know which items in the trees are files, and which are directories. [For a more in depth explanation of .file, check this out.](https://file.org/extension/file)).
 
 ### Anatomy
 A path consists of a bunch of directories, separated in some way. Or, if you're referencing a specific file, it's a bunch of directories followed by a file name, and it's file type. For example: 

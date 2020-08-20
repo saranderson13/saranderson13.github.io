@@ -82,6 +82,9 @@ div .mw-parser-output
 ---
 
 **And as promised,** here is [a cute game to practice your selecting](https://flukeout.github.io/), and also some other helpful resources.
+
 [The 30 CSS Selectors You Must Memorize](https://code.tutsplus.com/tutorials/the-30-css-selectors-you-must-memorize--net-16048)
+
 [CSS Selectors: A Comprehensive Visual Guide](https://dottedsquirrel.com/css/css-selectors/)
+
 [CSS Selectors Cheat Sheet](https://www.web4college.com/questions/css-selectors-cheat-sheet.php)

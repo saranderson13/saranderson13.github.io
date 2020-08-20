@@ -43,10 +43,12 @@ document.querySelectorAll('div.mw-parser-output p:first-child')
 It should return an array of just one node! That's perfect, because it means you've nailed your target. You can even do some live altering, (that won't stick around when you refresh the page).
 
 ```
-// If you use querySelectorAll, make sure you select the specific node from the array, in this case with [0]
+// If you use querySelectorAll, make sure you select the 
+// specific node from the array, in this case with [0]
 document.querySelectorAll('div.mw-parser-output p:first-child')[0].style.backgroundColor = "pink"
 
-// Or you could just use querySelector, which will return the correct node because it is the only one applicable.
+// Or you could just use querySelector, which will return the 
+// correct node because it is the only one applicable.
 document.querySelector('div.mw-parser-output p:first-child').style.backgroundColor = "pink"
 ```
 
@@ -61,7 +63,7 @@ div.mw-parser-output p:first-child {
 }
 ```
 
-because who know... they might. In this case, your selector will lose. But the way to get around that is to keep going up the chain of tags, ids and classes. From the image above, you could expand your selector to `div@mw-content-text.mw-content-ltr div.mw-parser-output p:first-child`. It might look a bit verbose, or like overkill, but in this scenerio, now your styling would win out.
+because who knows... they might. In this case, your selector will lose. But the way to get around that is to keep going up the chain of tags, ids and classes. From the image above, you could expand your selector to `div@mw-content-text.mw-content-ltr div.mw-parser-output p:first-child`. It might look a bit verbose, or like overkill, but in this scenerio, now your styling would win out.
 
 ---
 

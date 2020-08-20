@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "Crafting your CSS Selector"
-date:       2020-08-20 04:00:05 +0000
+date:       2020-08-20 00:00:06 -0400
 permalink:  crafting_your_css_selector
 ---
 
@@ -32,7 +32,7 @@ div.mw-parser-output p:first-child
 
 ---
 
-#### So now you know how to craft a selector. 
+### So now you know how to craft a selector. 
 But what happens if you try to implement it, and it doesn't work. And you ask yourself... did I get it wrong?... do I need to be more specific? Luckily, there is a way to test out your selectors with dev tools. If you head over to the console, you can use `document.querySelector` OR `document.querySelectorAll` to see what you get when you use your selector. Using just `querySelector` will return the *first* node that matches that selector. Using `querySelectorAll` will return an array of all nodes that matches that selector, which, in fact, is a great way to tell if your selector is specific enough. If you get back an array of multiple nodes, you'll know that any styles you alter will apply to all of them. Let's see an example. You can try it out as well. The article [This is](https://en.wikipedia.org/wiki/Bucket-brigade_device) the article I'm using for this tutorial. 
 
 ```
@@ -52,7 +52,7 @@ document.querySelector('div.mw-parser-output p:first-child').style.backgroundCol
 
 ---
 
-#### One last thing to remember
+### One last thing to remember
 Say you go to implement your modification, and you've checked your selector, and you're grabbing the right node, but it still doesn't work. This is where that *most specific* rule comes into play. It is entirely possible that the original style sheet defines some styles like this:
 
 ```
@@ -65,7 +65,7 @@ because who know... they might. In this case, your selector will lose. But the w
 
 ---
 
-#### JK, because we love to do that here, there is one more helpful tidbit.
+### JK, because we love to do that here, there is one more helpful tidbit.
 Also, note that there is a space between the `div.mw-parser-output` and the `p`. When stringing selectors together, that space indicates whether the class (or id) is directly assigned to the type selector, or whether it is assigned to a child element within. In this instance, it means that you are selecting a `p` *within* the `div` that is assigned a class of `mw-parser-output`. So, for example:
 
 ```

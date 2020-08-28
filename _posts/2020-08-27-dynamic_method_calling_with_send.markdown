@@ -1,14 +1,14 @@
 ---
 layout: post
 title:      "Dynamic Method Calling with `.send`!"
-date:       2020-08-28 02:36:41 +0000
+date:       2020-08-27 22:36:42 -0400
 permalink:  dynamic_method_calling_with_send
 ---
 
 
 Gonna dip into some ruby today. One thing to strive for when writing in an object oriented language is to write DRY code - meaning "don't repeat yourself". This is accomplished with *abstraction*, and there are many ways to abstract code. Inheritance, for one, which can be utilized by creating a class that subclasses extend from, or by creating a module that can be included in multiple classes. But another way to abstract is to make methods as multi-functional as possible. 
 
-Now wait a tic, I want to emphasize that having a single octopus-like method that does ALL THE THINGS ![](https://i.ibb.co/Z8s31FT/all-the-things-mini.jpg), is bad. Making a method multi-functional should still be balanced with the 'single responsibility principal'. But it's also ridiculous to have three different methods that are nearly identical, except the return hinges on manipulating the data in different ways.
+Now wait a tic, I want to emphasize that having a single octopus-like method that does ALL THE THINGS is bad. Making a method multi-functional should still be balanced with the 'single responsibility principal'. But it's also ridiculous to have three different methods that are nearly identical, except the return hinges on manipulating the data in different ways.
 
 What we're aiming for is to combine methods that answer the same question, by being able to *dynamically* trigger other functions inside of it. Have you ever, for instance, wanted to pass in the name of a method as an argument, and then call it? Well, you can!
 

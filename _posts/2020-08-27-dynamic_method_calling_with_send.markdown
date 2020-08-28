@@ -10,7 +10,7 @@ Gonna dip into some ruby today. One thing to strive for when writing in an objec
 
 Now wait a tic, I want to emphasize that having a single octopus-like method that does ALL THE THINGS is bad. Making a method multi-functional should still be balanced with the 'single responsibility principal'. But it's also ridiculous to have three different methods that are nearly identical, except the return hinges on manipulating the data in different ways.
 
-What we're aiming for is to combine methods that answer the same question, by being able to *dynamically* trigger other functions inside of it. Have you ever, for instance, wanted to pass in the name of a method as an argument, and then call it? Well, you can!
+The aim is to combine methods that answer the same basic question, into a single method that can *dynamically* trigger other methods. Have you ever, for instance, wanted to pass in the name of a method as an argument, and then call it? Well, you can!
 
 ## .send
 

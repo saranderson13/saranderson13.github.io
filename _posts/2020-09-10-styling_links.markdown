@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "Styling Links"
-date:       2020-09-11 03:12:21 +0000
+date:       2020-09-10 23:12:21 -0400
 permalink:  styling_links
 ---
 
@@ -30,7 +30,7 @@ Note that the *order* in which each pseudo class is defined is important. `a:hov
 ## Fancier styling!
 Styling links can get pretty fancy, and one quick way to up the aesthetic is to include transitions. Such as fades and the like. The third example in the JS Fiddle demonstrates a fading link, where there is a smooth transition from the basic state, to the hovered state.
 
-By setting a `transform` attribute in the `a`, `a:link`, and `a:visited`, it is possoble to enable any attribute that differs in the `a:hover` to gently transition. In this example, the color will fade to pink quickly, and the font size will grow slowly.
+By setting a `transform` attribute in the `a`, `a:link`, and `a:visited`, it is possible to enable any attribute that differs in the `a:hover` to gently transition. In this example, the color will fade to pink quickly, and the font size will grow slowly.
 
 ```
 .fancy {
@@ -42,8 +42,7 @@ By setting a `transform` attribute in the `a`, `a:link`, and `a:visited`, it is 
 a.fancy, a.fancy:visited { 
   color: black;
   text-decoration: none;
-  transition: color .4s ease-in-out;
-  transition: font-size .8s ease-in-out;
+  transition: color .4s ease-in-out, font-size 1s ease-in-out;
 }
 
 a.fancy:hover, a.fancy:active { 
@@ -52,7 +51,7 @@ a.fancy:hover, a.fancy:active {
 }
 ```
 
-If there are multiple attributes that should transition in unison, the first argument can be set to `all`. Such as `transition: all .4s ease-in-out;`
+If there are multiple attributes that should transition in unison, the first argument can be set to `all`. Such as `transition: all .4s ease-in-out;` And there is plenty more that can be transitioned than just font size and color. [This is the documentation for `transition`.](https://www.w3schools.com/cssref/css3_pr_transform.asp)
 
 
 ## Hijacking Link Styling
